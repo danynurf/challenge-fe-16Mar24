@@ -1,0 +1,24 @@
+<div class="container flex flex-column align-items-center">
+  <h1 class="text-center">Video Player</h1>
+  <div class="flex flex-column align-items-center relative video-wrapper">
+    <div class="absolute text-white z-2 title text-center p-2 fadein">{{video.title}}</div>
+    <video
+      #myVideo
+      class="video-js"
+      controls
+      preload="auto"
+      width="640"
+      height="264"
+      data-setup="{}"
+      (click)="onClick($event)"
+    >
+      <source [src]="video.src" type="video/mp4" />
+    </video>
+  </div>
+  <div class="flex gap-3 mt-3">
+    <button pButton icon="fa-solid fa-backward" [disabled]="isDisable" (click)="backward()"></button>
+    <button pButton icon="fa-solid fa-rotate-left" (click)="onRestart()"></button>
+    <button pButton [icon]="icon" (click)="onPlay()"></button>
+    <button pButton icon="fa-solid fa-forward" [disabled]="isDisable" (click)="forward()" ></button>
+  </div>
+</div>

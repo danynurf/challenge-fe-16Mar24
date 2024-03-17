@@ -1,0 +1,22 @@
+:host ::ng-deep {
+  .video-js {
+    .vjs-big-play-button,
+    .vjs-play-control {
+      display: none;
+    }
+  }
+
+  .title {
+    background-color: hsla(0, 0%, 0%, 0.438);
+    width: 640px;
+    display: none;
+  }
+
+  .video-wrapper {
+    width: 640px;
+
+    &:hover .title{
+      display: block;
+    }
+  }
+}
